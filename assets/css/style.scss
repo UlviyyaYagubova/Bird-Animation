@@ -1,0 +1,172 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #e3edf7;
+}
+.container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    .body{
+        position: absolute;
+        width: 210px;
+        height: 210px;
+        border-radius: 50%;
+        background: linear-gradient( transparent 30%, #ff533e 30%);
+        transform: rotate(-17deg);
+        z-index: 1;
+    }
+    .head{
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: black;
+        border-radius: 50%;
+        z-index: 3;
+        left: -350px;
+        top: -90px;
+        animation: head-movement 1s forwards;
+        animation-delay: 1s;
+        &::before{
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: white;
+            top: 20px;
+            left: 40px;
+            z-index: 4;
+
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            background-color: black;
+            border-radius: 50%;
+            top: 30px;
+            left: 50px;
+            width: 10px;
+            height: 10px;
+            z-index: 5;
+            animation: blink-eye 1.4s infinite;
+            @keyframes blink-eye {
+                100%{
+                    height: 7px;
+                }
+            }
+        }
+    }
+    @keyframes head-movement {
+        100% {
+            left: 30px;
+        }
+    }
+    .beak{
+        position: absolute;
+        width: 45px;
+        height: 25px;
+        background-color: #ff533e;
+        border-radius: 50%;
+        background: linear-gradient(#ff533e 50%, transparent 50%);
+        transform: rotate(-19deg);
+        z-index: 2;
+        top: 170px;
+        left: 106px;
+        animation: beak-movement 1.5s forwards;
+        animation-delay: 1s;
+    }
+    @keyframes beak-movement {
+        100%{
+            top: -70px;
+        }
+    }
+    .feather{
+        position: absolute;
+        width: 170px;
+        height: 140px;
+        border-radius: 50%;
+        background: linear-gradient( transparent 30%,  #939393 30%);
+        transform: rotate(-17deg);
+        z-index: 2;
+        top: -320px;
+        left: -110px;
+        animation: feather-movement 2s forwards;
+        animation-delay: 1s;
+    }
+    @keyframes feather-movement {
+        100%{
+            top: -90px;
+        }
+    }
+    .tail{
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        z-index: 1;
+        background-color: black;
+        -webkit-clip-path: polygon(71% 0, 0 34%, 100% 26%);
+        clip-path: polygon(71% 0, 0 34%, 100% 26%);
+        transform: rotate(9deg);
+        top: -48px;
+        left: 210px;
+        animation: tail-movement 2s forwards;
+        animation-delay: 1s;
+    }
+    @keyframes tail-movement {
+        100%{
+            left: -210px;
+        }
+    }
+    .leg{
+        position: absolute;
+        width: 7px;
+        height: 30px;
+        background-color: #00adef;
+        top: 250px;
+        z-index: 0;
+        border-radius: 20px;
+        transform: rotate(-18deg);
+        animation: leg-movement 2s forwards;
+        animation-delay: 1s;
+        &::before{
+            content: '';
+            position: absolute;
+            width: 7px;
+            height: 23px;
+            border-radius: 20px;
+            top: -15px;
+            left: 7px;
+            transform: rotate(50deg);
+            background-color: #00adef;
+            z-index: 1;
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            width: 23px;
+            height: 7px;
+            border-radius: 20px;
+            top: 27px;
+            left: 1px;
+            transform: rotate(15deg);
+            background-color: #00adef;
+            z-index: 1;
+        }
+    }
+    @keyframes leg-movement {
+        100%{
+            top: 117px;
+        }
+    }
+}
